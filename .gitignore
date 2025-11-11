@@ -30,9 +30,12 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 .pnpm-debug.log*
+pnpm-lock.yaml
 settings.*
 
 # env files (can opt-in for committing if needed)
+.idea
+.idea/*
 .env
 .env.local
 .env.*.local

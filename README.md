@@ -1,99 +1,149 @@
-<p align="center">
-  <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="120" alt="Nest Logo" /></a>
-</p>
+# iaxixi-nest
 
-[circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
-[circleci-url]: https://circleci.com/gh/nestjs/nest
+基于 NestJS 框架的后端服务项目。
 
-  <p align="center">A progressive <a href="http://nodejs.org" target="_blank">Node.js</a> framework for building efficient and scalable server-side applications.</p>
-    <p align="center">
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/dm/@nestjs/common.svg" alt="NPM Downloads" /></a>
-<a href="https://circleci.com/gh/nestjs/nest" target="_blank"><img src="https://img.shields.io/circleci/build/github/nestjs/nest/master" alt="CircleCI" /></a>
-<a href="https://coveralls.io/github/nestjs/nest?branch=master" target="_blank"><img src="https://coveralls.io/repos/github/nestjs/nest/badge.svg?branch=master#9" alt="Coverage" /></a>
-<a href="https://discord.gg/G7Qnnhy" target="_blank"><img src="https://img.shields.io/badge/discord-online-brightgreen.svg" alt="Discord"/></a>
-<a href="https://opencollective.com/nest#backer" target="_blank"><img src="https://opencollective.com/nest/backers/badge.svg" alt="Backers on Open Collective" /></a>
-<a href="https://opencollective.com/nest#sponsor" target="_blank"><img src="https://opencollective.com/nest/sponsors/badge.svg" alt="Sponsors on Open Collective" /></a>
-  <a href="https://paypal.me/kamilmysliwiec" target="_blank"><img src="https://img.shields.io/badge/Donate-PayPal-ff3f59.svg" alt="Donate us"/></a>
-    <a href="https://opencollective.com/nest#sponsor"  target="_blank"><img src="https://img.shields.io/badge/Support%20us-Open%20Collective-41B883.svg" alt="Support us"></a>
-  <a href="https://twitter.com/nestframework" target="_blank"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow" alt="Follow us on Twitter"></a>
-</p>
-  <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
-  [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
+## 技术栈
 
-## Description
+- **框架**: NestJS 10.x
+- **语言**: TypeScript 5.x
+- **ORM**: TypeORM 0.3.27
+- **数据库**: MySQL
+- **包管理**: pnpm
+- **测试**: Jest
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+## 功能特性
 
-## Project setup
+- 用户管理模块
+- TypeORM 数据库集成
+- 环境变量配置管理
+- RESTful API 接口
+
+## 环境要求
+
+- Node.js >= 18.x
+- pnpm >= 8.x
+- MySQL >= 5.7
+
+## 安装
 
 ```bash
-$ pnpm install
+# 安装依赖
+pnpm install
 ```
 
-## Compile and run the project
+## 配置
+
+在项目根目录创建 `.env` 文件：
+
+```env
+# 应用配置
+PORT=3000
+
+# 数据库配置
+DB_HOST=localhost
+DB_PORT=3306
+DB_USERNAME=root
+DB_PASSWORD=your_password
+DB_DATABASE=iaxixi
+```
+
+## 运行项目
 
 ```bash
-# development
-$ pnpm run start
+# 开发模式（热重载）
+pnpm run start:dev
 
-# watch mode
-$ pnpm run start:dev
+# 普通开发模式
+pnpm run start
 
-# production mode
-$ pnpm run start:prod
+# 调试模式
+pnpm run start:debug
+
+# 生产模式
+pnpm run start:prod
 ```
 
-## Run tests
+## 构建
 
 ```bash
-# unit tests
-$ pnpm run test
-
-# e2e tests
-$ pnpm run test:e2e
-
-# test coverage
-$ pnpm run test:cov
+# 构建项目
+pnpm run build
 ```
 
-## Deployment
-
-When you're ready to deploy your NestJS application to production, there are some key steps you can take to ensure it runs as efficiently as possible. Check out the [deployment documentation](https://docs.nestjs.com/deployment) for more information.
-
-If you are looking for a cloud-based platform to deploy your NestJS application, check out [Mau](https://mau.nestjs.com), our official platform for deploying NestJS applications on AWS. Mau makes deployment straightforward and fast, requiring just a few simple steps:
+## 测试
 
 ```bash
-$ pnpm install -g mau
-$ mau deploy
+# 单元测试
+pnpm run test
+
+# 监听模式测试
+pnpm run test:watch
+
+# 测试覆盖率
+pnpm run test:cov
+
+# e2e 测试
+pnpm run test:e2e
 ```
 
-With Mau, you can deploy your application in just a few clicks, allowing you to focus on building features rather than managing infrastructure.
+## 代码规范
 
-## Resources
+```bash
+# 格式化代码
+pnpm run format
 
-Check out a few resources that may come in handy when working with NestJS:
+# 代码检查
+pnpm run lint
+```
 
-- Visit the [NestJS Documentation](https://docs.nestjs.com) to learn more about the framework.
-- For questions and support, please visit our [Discord channel](https://discord.gg/G7Qnnhy).
-- To dive deeper and get more hands-on experience, check out our official video [courses](https://courses.nestjs.com/).
-- Deploy your application to AWS with the help of [NestJS Mau](https://mau.nestjs.com) in just a few clicks.
-- Visualize your application graph and interact with the NestJS application in real-time using [NestJS Devtools](https://devtools.nestjs.com).
-- Need help with your project (part-time to full-time)? Check out our official [enterprise support](https://enterprise.nestjs.com).
-- To stay in the loop and get updates, follow us on [X](https://x.com/nestframework) and [LinkedIn](https://linkedin.com/company/nestjs).
-- Looking for a job, or have a job to offer? Check out our official [Jobs board](https://jobs.nestjs.com).
+## 项目结构
 
-## Support
+```
+src/
+├── config/              # 配置文件
+│   ├── app.config.ts    # 应用配置
+│   └── database.config.ts # 数据库配置
+├── user/                # 用户模块
+│   ├── dto/             # 数据传输对象
+│   ├── entities/        # 实体定义
+│   ├── user.controller.ts
+│   ├── user.service.ts
+│   └── user.module.ts
+├── app.module.ts        # 应用主模块
+└── main.ts              # 应用入口
+```
 
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
+## 数据库
 
-## Stay in touch
+### 用户表 (iaxixi_user)
 
-- Author - [Kamil Myśliwiec](https://twitter.com/kammysliwiec)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
+| 字段 | 类型 | 说明 |
+|------|------|------|
+| id | int | 主键，自增 |
+| Name | varchar | 用户名 |
+| Github | varchar | GitHub 账号 |
+| Email | varchar | 邮箱地址 |
+| Juejin | varchar | 掘金账号 |
+
+## API 文档
+
+启动项目后访问：`http://localhost:3000`
+
+### 用户相关接口
+
+- `GET /user` - 获取用户列表
+- `GET /user/:id` - 获取用户详情
+- `POST /user` - 创建用户
+- `PATCH /user/:id` - 更新用户
+- `DELETE /user/:id` - 删除用户
+
+## 开发说明
+
+1. 所有数据库实体定义在对应模块的 `entities` 目录下
+2. 使用 DTO 进行数据验证和转换
+3. 遵循 NestJS 模块化设计原则
+4. 数据库 `synchronize` 已关闭，需手动管理数据库迁移
 
 ## License
 
-Nest is [MIT licensed](https://github.com/nestjs/nest/blob/master/LICENSE).
+UNLICENSED
